@@ -47,6 +47,13 @@ const Container = styled.div`
     font-family: 'Lobster', cursive;
     color:#34394B;
     max-width:100%;
+    #tsparticles{
+      position:fixed;
+      left:0px;
+      right:0px;
+      bottom:0px;
+      top:0px;
+    }
       .top{
         margin-bottom:30px;
         margin-top:30px;
