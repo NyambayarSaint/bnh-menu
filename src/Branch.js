@@ -13,7 +13,7 @@ const Branch = (prop) => {
     }, [])
 
     const goFetch = async () => {
-        const res = await fetch('https://bnh-menu-service.herokuapp.com', {
+        const res = await fetch('http://localhost:5000', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -27,63 +27,13 @@ const Branch = (prop) => {
         const test = transform(products)
         setMenu(test)
         setLoaded(true)
+        console.log(test, 'hehe')
     }
     return (
         <>
             {loaded ?
                 <div className="branches">
-                    <Particles params={{
-                        "particles": {
-                            "number": {
-                                "value": 30,
-                                "density": {
-                                    "enable": false
-                                }
-                            },
-                            "color": "#006851",
-                            "size": {
-                                "value": 3,
-                                "random": true,
-                                "anim": {
-                                    "speed": 10,
-                                    "size_min": 0.3
-                                }
-                            },
-                            "line_linked": {
-                                "enable": false
-                            },
-                            "move": {
-                                "random": true,
-                                "speed": 1,
-                                "direction": "top",
-                                "out_mode": "out"
-                            }
-                        },
-                        "interactivity": {
-                            "events": {
-                                "onhover": {
-                                    "enable": true,
-                                    "mode": "bubble"
-                                },
-                                "onclick": {
-                                    "enable": true,
-                                    "mode": "repulse"
-                                }
-                            },
-                            "modes": {
-                                "bubble": {
-                                    "distance": 250,
-                                    "duration": 2,
-                                    "size": 0,
-                                    "opacity": 0
-                                },
-                                "repulse": {
-                                    "distance": 400,
-                                    "duration": 4
-                                }
-                            }
-                        }
-                    }} />
+                    <div className="background-opacity"></div>
                     <div className="container">
                         <div className="top">
                             <div className="title">Menu</div>
@@ -102,13 +52,20 @@ const Branch = (prop) => {
                                     </div>}
                                     <div className="lists">
                                         {instance.products.map(product => (
-                                            <div className="list" key={Math.random()}>
-                                                <div className="name">{product.name}</div>
-                                                <div className="variants">
-                                                    {product.hasVariant && product.variants.map(variant => (
-                                                        <div className="variant" key={Math.random()}>{Number(variant.price) / 1000}K</div>
-                                                    ))}
-                                                    {!product.hasVariant && <div className="variant">{Number(product.price) / 1000}K</div>}
+                                            <div className={`list-wrap ${instance.CategoryName === "ХООЛ, ДАРУУЛГА" && 'food'}`} key={Math.random()}>
+                                                {product.img &&  <div className="img-wrap"><img src={product.img} /></div>}
+                                                <div className="list">
+                                                    {instance.CategoryName === 'ХООЛ, ДАРУУЛГА' ?
+                                                        <div className="name">{product.name} - {Number(product.price) / 1000}K</div>
+                                                        :
+                                                        <div className="name">{product.name}</div>
+                                                    }
+                                                    <div className="variants">
+                                                        {product.hasVariant && product.variants.map(variant => (
+                                                            <div className="variant" key={Math.random()}>{Number(variant.price) / 1000}K</div>
+                                                        ))}
+                                                        {!product.hasVariant && <div className="variant">{Number(product.price) / 1000}K</div>}
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))}

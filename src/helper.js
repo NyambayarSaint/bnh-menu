@@ -16,6 +16,7 @@ export const populateProducts = (parents, json) => {
     })
     return tmpArr
 };
+export const fooderize = (incomingArr) => incomingArr.filter(inst => inst.CategoryName === 'ХООЛ, ДАРУУЛГА')[0]
 export const transform = (incomingArr) => {
     const arrToSend = []
     incomingArr.map((instance) => {

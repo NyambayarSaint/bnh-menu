@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Branch from './Branch'
+import Food from './Food'
 import { Route, Switch } from 'react-router';
 import Test from './Test'
 
@@ -33,6 +34,29 @@ const App = () => {
         <Route path="/20"><Branch id="20" name="Z karaoke" /></Route>
         <Route path="/21"><Branch id="21" name="Q karaoke" /></Route>
         <Route path="/22"><Branch id="22" name="Хүргэлтийн хоол" /></Route>
+
+        <Route path="/food/1"><Food id="1" name="Amure karaoke" /></Route>
+        <Route path="/food/2"><Food id="2" name="Amure hotel" /></Route>
+        <Route path="/food/3"><Food id="3" name="Amure bar" /></Route>
+        <Route path="/food/4"><Food id="4" name="Bers hotel" /></Route>
+        <Route path="/food/5"><Food id="5" name="Q hotel" /></Route>
+        <Route path="/food/6"><Food id="6" name="Оффис" /></Route>
+        <Route path="/food/7"><Food id="7" name="S13 bar" /></Route>
+        <Route path="/food/8"><Food id="8" name="S13 karaoke" /></Route>
+        <Route path="/food/9"><Food id="9" name="SQ club" /></Route>
+        <Route path="/food/10"><Food id="10" name="SQ lounge" /></Route>
+        <Route path="/food/11"><Food id="11" name="SQ V.I.P LOUNGE" /></Route>
+        <Route path="/food/12"><Food id="12" name="Secret Garden hotel" /></Route>
+        <Route path="/food/13"><Food id="13" name="Business Tower hotel" /></Route>
+        <Route path="/food/14"><Food id="14" name="Venice 28 karaoke" /></Route>
+        <Route path="/food/15"><Food id="15" name="ТӨВ АГУУЛАХ" /></Route>
+        <Route path="/food/16"><Food id="16" name="Grand Voice karaoke" /></Route>
+        <Route path="/food/17"><Food id="17" name="Гоё моторс" /></Route>
+        <Route path="/food/18"><Food id="18" name="Vox karaoke" /></Route>
+        <Route path="/food/19"><Food id="19" name="iKaraoke" /></Route>
+        <Route path="/food/20"><Food id="20" name="Z karaoke" /></Route>
+        <Route path="/food/21"><Food id="21" name="Q karaoke" /></Route>
+        <Route path="/food/22"><Food id="22" name="Хүргэлтийн хоол" /></Route>
       </Switch>
     </Container>
   );
@@ -42,11 +66,24 @@ export default App;
 
 const Container = styled.div`
   .branches {
-    // font-family: 'Balsamiq Sans', cursive;
+    font-family: 'Balsamiq Sans', cursive;
     // font-family: 'Roboto', sans-serif;
-    font-family: 'Lobster', cursive;
+    // font-family: 'Lobster', cursive;
+    // font-family: 'Montserrat', sans-serif;
     color:#34394B;
+    color:white;
     max-width:100%;
+    background-image: url(https://t4.ftcdn.net/jpg/01/28/77/55/360_F_128775518_Oe4y5IAIrVxhN12IFOU1pYoR91zkOj5d.jpg);
+    .background-opacity{
+      background-image: url(https://media.istockphoto.com/vectors/seamless-patterns-with-red-wine-set-cask-barrel-wineglass-grape-and-vector-id1152221169?k=20&m=1152221169&s=612x612&w=0&h=ZCjXcFuCli4FfO-_vafYFjm74MUo4wgU6nxzAvT1N6g=);
+      position:fixed;
+      left:0px;
+      right:0px;
+      bottom:0px;
+      top:0px;
+      // background-size:100%;
+      opacity:0.2;
+    }
     #tsparticles{
       position:fixed;
       left:0px;
@@ -77,6 +114,8 @@ const Container = styled.div`
           .title{
             font-size:40px;
             color:#b12c4a;
+            color:white;
+            opacity:0.7;
           }
           .measures{
             margin-bottom:15px;
@@ -84,32 +123,119 @@ const Container = styled.div`
             justify-content:flex-end;
             font-family:Roboto;
             .measure{
-              font-weight:300;
+              font-weight:bold;
               min-width:50px;
               max-width:50px;
               margin-left:15px;
               padding:0px 0px;
               text-align:center;
               background:#34394B;
+              background:white;
               color:white;
+              color:#444343;
+              
             }
           }
           .lists{
-            .list{
-              display:flex;
-              justify-content:space-between;
-              .name{
-                white-space:nowrap;
-                width:0px;
+            .list-wrap{
+              .img-wrap{
+                position:relative;
+                z-index:1;
+                border:2px solid #EDEDED;
+                img{
+                  width:100%;
+                }
               }
-              .variants{
+              .list{
                 display:flex;
-                margin-left:auto;
-                .variant{
-                  max-width:50px;
-                  min-width:50px;
-                  margin-left:15px;
-                  text-align:right;
+                justify-content:space-between;
+                .name{
+                  white-space:nowrap;
+                  width:0px;
+                }
+                .variants{
+                  display:flex;
+                  margin-left:auto;
+                  .variant{
+                    max-width:50px;
+                    min-width:50px;
+                    margin-left:15px;
+                    text-align:right;
+                  }
+                }
+              } 
+              &.food{
+                margin-bottom:30px;
+                .list{
+                  margin-top:-10px;
+                  display:block;
+                  .name{
+                    width:auto;
+                    text-align:center;
+                    border-bottom:2px solid white;
+                    padding-bottom:6px;
+                  }
+                  .variants{
+                    display:none;
+                  }
+                }
+              }
+              &:nth-child(odd){
+                .img-wrap{
+                  transform:scale(0.8) rotate(2deg);
+                  &:before{
+                    display:block;
+                    content:"";
+                    width:100px;
+                    height:20px;
+                    background:white;
+                    position:absolute;
+                    left:-27px;
+                    top:15px;
+                    transform:rotate(-41deg);
+                    opacity:0.6;
+                  }
+                  &:after{
+                    display:block;
+                    content:"";
+                    width:80px;
+                    height:20px;
+                    background:white;
+                    position:absolute;
+                    right:-27px;
+                    bottom:15px;
+                    transform:rotate(-41deg);
+                    opacity:0.6;
+                  }
+                }
+              }
+              &:nth-child(even){
+                .img-wrap{
+                  transform:scale(0.8) rotate(-2deg);
+                  &:before{
+                    display:block;
+                    content:"";
+                    width:100px;
+                    height:20px;
+                    background:white;
+                    position:absolute;
+                    right:-27px;
+                    top:15px;
+                    transform:rotate(41deg);
+                    opacity:0.6;
+                  }
+                  &:after{
+                    display:block;
+                    content:"";
+                    width:80px;
+                    height:20px;
+                    background:white;
+                    position:absolute;
+                    left:-27px;
+                    bottom:15px;
+                    transform:rotate(41deg);
+                    opacity:0.6;
+                  }
                 }
               }
             }
@@ -117,6 +243,9 @@ const Container = styled.div`
         }
       }
       @media only screen and (max-width: 600px) {
+        .background-opacity{
+          background-size: 100%;
+        }
         .bottom{
           .list-con{
             max-width:100%;
@@ -127,21 +256,26 @@ const Container = styled.div`
             }
             .measures{
               .measure{
-                max-width:40px;
-                min-width:40px;
+                max-width:60px;
+                min-width:60px;
                 margin-left:5px;
               }
             }
             .lists{
-              .list{
-                font-size:20px;
-                .name{
+              .list-wrap{
+                .img-wrap{
+
                 }
-                .variants{
-                  .variant{
-                    max-width:40px;
-                    min-width:40px;
-                    margin-left:5px;
+                .list{
+                  font-size:20px;
+                  .name{
+                  }
+                  .variants{
+                    .variant{
+                      max-width:60px;
+                      min-width:60px;
+                      margin-left:5px;
+                    }
                   }
                 }
               }
