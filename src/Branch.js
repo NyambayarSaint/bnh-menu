@@ -13,7 +13,7 @@ const Branch = (prop) => {
     }, [])
 
     const goFetch = async () => {
-        const res = await fetch('http://localhost:5000', {
+        const res = await fetch('https://bnh-menu-service.herokuapp.com/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
