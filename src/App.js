@@ -172,7 +172,7 @@ const Container = styled.div`
                   .name{
                     width:auto;
                     text-align:center;
-                    border-bottom:2px solid white;
+                    border-bottom:2px dotted white;
                     padding-bottom:6px;
                   }
                   .variants{
@@ -267,7 +267,7 @@ const Container = styled.div`
 
                 }
                 .list{
-                  font-size:20px;
+                  font-size:23px;
                   .name{
                   }
                   .variants{

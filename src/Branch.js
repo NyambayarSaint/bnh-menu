@@ -36,8 +36,8 @@ const Branch = (prop) => {
                     <div className="background-opacity"></div>
                     <div className="container">
                         <div className="top">
-                            <div className="title">Menu</div>
-                            <div className="description">{prop.name}</div>
+                            <div className="title">{prop.name}</div>
+                            <div className="description">Menu</div>
                         </div>
                         <div className="bottom">
                             {menu.map(instance => (
