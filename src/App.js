@@ -267,7 +267,7 @@ const Container = styled.div`
 
                 }
                 .list{
-                  font-size:23px;
+                  font-size:21px;
                   .name{
                   }
                   .variants{
