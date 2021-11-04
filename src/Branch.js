@@ -56,7 +56,10 @@ const Branch = (prop) => {
                                                 {product.img &&  <div className="img-wrap"><img src={product.img} /></div>}
                                                 <div className="list">
                                                     {instance.CategoryName === 'ХООЛ, ДАРУУЛГА' ?
-                                                        <div className="name">{product.name} - {Number(product.price) / 1000}K</div>
+                                                        <>
+                                                            <div className="name">{product.name} - {Number(product.price) / 1000}K</div>
+                                                            <div className="description">{product.description}</div>
+                                                        </>
                                                         :
                                                         <div className="name">{product.name}</div>
                                                     }

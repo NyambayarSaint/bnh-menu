@@ -66,10 +66,10 @@ export default App;
 
 const Container = styled.div`
   .branches {
-    font-family: 'Balsamiq Sans', cursive;
+    // font-family: 'Balsamiq Sans', cursive;
     // font-family: 'Roboto', sans-serif;
     // font-family: 'Lobster', cursive;
-    // font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color:#34394B;
     color:white;
     max-width:100%;
@@ -172,8 +172,20 @@ const Container = styled.div`
                   .name{
                     width:auto;
                     text-align:center;
+                  }
+                  .description{
                     border-bottom:2px dotted white;
-                    padding-bottom:6px;
+                    padding-bottom:10px;
+                    text-align:center;
+                    font-size: 16px;
+                    margin-top:5px;
+                    font-family:Roboto;
+                    &:before{
+                      content:"(";
+                    }
+                    &:after{
+                      content:")";
+                    }
                   }
                   .variants{
                     display:none;
@@ -182,7 +194,7 @@ const Container = styled.div`
               }
               &:nth-child(odd){
                 .img-wrap{
-                  transform:scale(0.8) rotate(2deg);
+                  transform:scale(0.8);
                   &:before{
                     display:block;
                     content:"";
@@ -211,7 +223,7 @@ const Container = styled.div`
               }
               &:nth-child(even){
                 .img-wrap{
-                  transform:scale(0.8) rotate(-2deg);
+                  transform:scale(0.8);
                   &:before{
                     display:block;
                     content:"";
@@ -267,8 +279,10 @@ const Container = styled.div`
 
                 }
                 .list{
-                  font-size:21px;
+                  font-size:20px;
                   .name{
+                  }
+                  .description{
                   }
                   .variants{
                     .variant{
